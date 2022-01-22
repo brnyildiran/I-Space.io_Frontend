@@ -1,0 +1,223 @@
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+:root {
+  --background-purple: #1B1227;
+  --text-gray: #BFCBCD;
+  --text-white: #FFFFFF;
+  --blue-highlight: #66FFF6;
+  --button-highlight: #2E4D5B;
+  --light-blue: #A7C6FF;
+  --black: #000000;
+}
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #1B1227;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #BFCBCD;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  margin: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Container_Log {
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
+  padding-left: 3.3%;
+  padding-right: 3.7%;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.Logo_Container_Log, .Nav_Links_Log {
+  display: flex;
+}
+
+.Logo_Container_Log{
+  flex: 1;
+  padding-top: 17px;
+}
+
+.Logo_Container_Log img {
+  width: 220px;
+  height: auto;
+  max-width: 120%;
+
+  transform: scale(0.91);
+}
+
+.Nav_Links_Log {
+  flex: 1;
+  justify-content: flex-end;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav ul li a {
+  float:left;
+  width: 95px;
+  padding: 5px;
+
+  color: var(--text-white);
+  border: 3px solid var(--blue-highlight);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+
+  transform: scale(0.91);
+}
+
+
+.RegisterTop {
+  margin-right: 10px;
+}
+
+form{
+  width: 100%;
+  height: 80vh;
+  margin: auto;
+
+  width: 300px;
+  height: 202px;
+  border: 2px solid var(--blue-highlight);
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  transform: scale(0.91);
+}
+
+.Login_Box {
+  margin: auto;
+  padding-top: 17vh;
+}
+
+.Login_Box h1 {
+  width: 59px;
+  height: 23px;
+  margin: 20px 22px 15px 22px;
+  font-size: 24px;
+  line-height: 29px;
+  border-top-left-radius: 50px;
+}
+
+.Login_Line {
+  margin: 15px 22px 25px 22px;
+  border: 1px solid var(--blue-highlight);
+  opacity: 100%;
+}
+
+.Log_Username_Field h1 {
+  width: 59px;
+  height: 23px;
+  margin: 20px 22px 15px 22px;
+  font-size: 24px;
+  line-height: 29px;
+  border-top-left-radius: 50px;
+}
+
+.Log_Username_Field,
+.Log_Password_Field {
+  width: 256px;
+  height: 32px;
+  padding: 5px 44px 15px 44px;
+  margin: 20px 22px;
+  text-align: center;
+  background: var(--light-blue);
+  border-radius: 10px;
+  text-align:left;
+}
+
+.Log_Username_Field input,
+.Log_Password_Field input {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+i::before {
+  background: transparent;
+}
+
+.Log_Username_Field i,
+.Log_Password_Field i {
+  float: left;
+  margin-left: -28px;
+  margin-top: 3px;
+  text-align: center;
+  background: none;
+  color: var(--background-purple);
+  outline: none;
+  border: none;
+}
+
+.Login_Buttons{
+  width: 100%;
+  display: flex;
+  margin-top: 45px;
+}
+
+.Login_Buttons li a {
+  font-size: 14px;
+  line-height: 9px;
+  color: var(--text-white);
+
+  background: var(--button-highlight);
+  border: 3px solid var(--blue-highlight);
+  border-radius: 10px;
+  text-align: center;
+}
+.register_Button {
+  width: 85px;
+  height: 32px;
+  padding: 9px;
+  margin-left: 180px;
+  cursor: pointer;
+}
+
+.submit_Button {
+  width: 85px;
+  height: 32px;
+  padding: 9px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.forgetMyPassword_Button {
+  width: 200px;
+  height: 32px;
+  padding: 9px;
+  cursor: pointer;
+  margin-left: -34px;
+}
+
+::placeholder {
+  color: var(--background-purple);
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: var(--light-blue);
+  border-color: var(--light-blue)
+}

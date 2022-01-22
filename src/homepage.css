@@ -1,0 +1,907 @@
+@import "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css";
+:root {
+  --background-purple: #1B1227;
+  --text-gray: #BFCBCD;
+  --text-white: #FFFFFF;
+  --blue-highlight: #66FFF6;
+  --button-highlight: #2E4D5B;
+  --light-blue: #A7C6FF;
+  --black: #000000;
+  --gold: #FFE070;
+  --movies: #66FFF6;
+  --tvSeries: #A7C6FF;
+  --music: #7B59FF;
+  --books: #A03ADB;
+  --artworks: #FF4FA2;
+
+}
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #1B1227;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #BFCBCD;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  margin: auto;
+  align-items: center;
+}
+
+.Container {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 100vw;
+  padding-left: 4%;
+  padding-right: 3%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+/*-----------------------------------------------------*/
+/*START: Navigation Menu*/
+.Logo_Container, .Nav_Links {
+  display: flex;
+}
+
+.Logo_Container img {
+  flex: 1;
+  padding-top: 20px;
+  justify-content: flex-start;
+  min-width: 220px;
+  height: auto;
+  max-width: 120%;
+  object-fit: contain;
+}
+
+nav {
+  flex: 2;
+  margin-top: 25px;
+  min-width: 15vw;
+  margin-left: 2vw;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav ul a {
+  display: block;
+  width: 100px;
+  height: 35px;
+  padding: 5px;
+  margin-right: 20px;
+  box-sizing: border-box;
+  color: var(--text-white);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+nav ul .MoviesTop {
+  border: 3px solid var(--movies);
+}
+
+nav ul .TVSeriesTop {
+  border: 3px solid var(--tvSeries);
+}
+
+nav ul .MusicTop {
+  border: 3px solid var(--music);
+}
+
+nav ul .BooksTop {
+  border: 3px solid var(--books);
+}
+
+nav ul .ArtworksTop {
+  border: 3px solid var(--artworks);
+}
+
+/* Style the search box inside the navigation bar */
+nav ul input[type=text] {
+  flex: 1;
+  float: right;
+  padding: 5px 18px 5px 18px;
+  border: 3px solid var(--text-white);
+  border-radius: 15px;
+  margin-left: 3vw;
+  min-width: 350px;
+  height: 35px;
+  color: var(--text-white);
+}
+
+::placeholder {
+  color: var(--text-white);
+}
+
+.Nav_Profile {
+  display: flex;
+  align-items: center;
+}
+
+.Nav_Profile img {
+  flex: 1;
+  margin-left: 3vw;
+}
+
+.Nav_Profile h5 {
+  flex: 1;
+  margin-left: 1vw;
+}
+
+.Nav_Profile li {
+  list-style-type: none;
+}
+/*END: Navigation Menu*/
+/*-----------------------------------------------------*/
+
+
+.Homepage_Container {
+  margin-top: 54px;
+}
+
+
+/*-----------------------------------------------------*/
+/* START: Customize ScrollBar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--background-purple);
+  border: 2px solid var(--text-white);
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--text-white);
+  border: 2px solid var(--text-white);
+  border-radius: 15px;
+  padding: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--button-highlight);
+}
+/* END: Customize ScrollBar */
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/*START: Daily Shuffle and From_Your_Collection_Row Statistics Allignments*/
+.ShuffleAndStats {
+  display: flex;
+  padding-top: 54px;
+}
+
+.Shuffle {
+  width: 75vw;
+}
+
+.Stats {
+  width: 25vw;
+  margin-left: 5vw;
+}
+/*END: Daily Shuffle and From_Your_Collection_Row Statistics Allignments*/
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/* START: Daily Shuffle */
+.Daily_Shuffle h4 {
+  width: 175px;
+  height: 45px;
+  left: 80px;
+  top: 169px;
+
+  border: 3px solid var(--gold);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 5px;
+}
+
+.Daily_Shuffle .Cards {
+  display: flex;
+  position: relative;
+  width: 100%;
+  padding-top: 23px;
+  padding-bottom: 100px;
+  justify-content: flex-start;
+}
+
+/* The flip card container - set the width and height to whatever you want.
+We have added the border property to demonstrate that the flip itself goes out
+of the box on hover (remove perspective if you don't want the 3D effect */
+.Flip_Card_Movie,
+.Flip_Card_TVSerie,
+.Flip_Card_Music,
+.Flip_Card_Book,
+.Flip_Card_Artwork {
+  flex: 2;
+  background-color: transparent;
+  width: 170px;
+  height: 250px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-right: 30px;
+}
+
+/* This container is needed to position the front and back side */
+.Flip_Card_Movie_Inner,
+.Flip_Card_TVSerie_Inner,
+.Flip_Card_Music_Inner,
+.Flip_Card_Book_Inner,
+.Flip_Card_Artwork_Inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Position the front and back side */
+.Flip_Card_Movie_Front, .Flip_Card_Movie_Back,
+.Flip_Card_TVSerie_Front, .Flip_Card_TVSerie_Back,
+.Flip_Card_Music_Front, .Flip_Card_Music_Back,
+.Flip_Card_Book_Front, .Flip_Card_Book_Back,
+.Flip_Card_Artwork_Front, .Flip_Card_Artwork_Back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.Flip_Card_Movie_Front,
+.Flip_Card_TVSerie_Front,
+.Flip_Card_Music_Front,
+.Flip_Card_Book_Front,
+.Flip_Card_Artwork_Front {
+  background: none;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  font-size: 24px;
+  color: var(--text-white);
+}
+
+.Flip_Card_Movie_Front p,
+.Flip_Card_TVSerie_Front p,
+.Flip_Card_Music_Front p,
+.Flip_Card_Book_Front p,
+.Flip_Card_Artwork_Front p {
+  text-align: left;
+  font-size: 20px;
+  background: none;
+  transform: rotate(-90deg) translate(-23%,0);
+  transform-origin: right bottom;
+  border-radius: 10px;
+}
+
+/* Style the back side */
+.Flip_Card_Movie_Back,
+.Flip_Card_TVSerie_Back,
+.Flip_Card_Music_Back,
+.Flip_Card_Book_Back,
+.Flip_Card_Artwork_Back {
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  font-size: 24px;
+  color: var(--text-white);
+
+  justify-content: center;
+  align-items: center;
+
+  transform: rotateY(180deg);
+}
+
+.Flip_Card_Movie_Back p,
+.Flip_Card_TVSerie_Back p,
+.Flip_Card_Music_Back p,
+.Flip_Card_Book_Back p,
+.Flip_Card_Artwork_Back p {
+  background: none;
+  border-radius: 10px;
+}
+
+.Flip_Card_Movie_Back {
+  background: #356978;
+}
+
+.Flip_Card_TVSerie_Back {
+  background: #505D8D;
+}
+
+.Flip_Card_Music_Back {
+  background: #3C2971;
+}
+
+.Flip_Card_Book_Back {
+  background: #571F72;
+}
+
+.Flip_Card_Artwork_Back {
+  background: #5F244C;
+}
+/* END: Daily Shuffle */
+/*-----------------------------------------------------*/
+
+
+/*-----------------------------------------------------*/
+/*START: Your Statistics Table*/
+.Your_Statistics h4 {
+  width: 195px;
+  height: 45px;
+  top: 169px;
+
+  border: 3px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+}
+
+.Your_Statistics table {
+  position: relative;
+  border-radius: 10px;
+  width: 305px;
+  height: 275px;
+}
+
+table {
+  margin-top: 28px;
+  border-collapse: separate !important;
+  border-spacing: 0px;
+  border-radius: 10px;
+  border-style: hidden;
+}
+
+table tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+
+table tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+table, td {
+  border: 2px solid var(--text-white);
+}
+
+table i::before {
+  background: transparent;
+}
+
+table i {
+  background: none;
+  color: var(--text-white);
+  outline: none;
+  border: none;
+}
+
+table td {
+  padding-left: 6%;
+}
+
+.bi-star {
+  padding-left: 10px;
+  width: 15px;
+}
+
+.bi-eye {
+  padding-left: 10px;
+  width: 15px;
+}
+
+.bi-heart {
+  padding-left: 10px;
+  width: 15px;
+}
+/*END: Your Statistics Table*/
+/*-----------------------------------------------------*/
+
+
+.swiper {
+  max-width: 100%;
+  max-height: 550px;
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+
+}
+
+.swiper-slide img{
+  object-fit: cover !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow: hidden;
+
+  transition: transform 450ms;
+  border: 3px solid var(--movies);
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.08);
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  height: 100%;
+  width: 2%;
+  width: calc(4%-5px);
+  top: 0;
+  bottom: 0;
+  margin: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+  display: flex;
+}
+
+.swiper .swiper-button-prev {
+  left: 0;
+}
+
+.swiper .swiper-button-next {
+  right: 0;
+}
+
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.1s ease-out;
+
+  background: none;
+  display: flex;
+
+  transform: scale(0.6);
+}
+
+
+
+/*-----------------------------------------------------*/
+/*START: Movies*/
+.Movies h4 {
+  width: 113px;
+  height: 45px;
+
+  border: 3px solid var(--movies);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.Movies h5 {
+  text-align: left;
+  color: var(--text-white);
+  padding-top: 8px;
+  padding-left: 15px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.Movies .Featured_Movies_Row h5 {
+  width: 185px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--movies);
+  border-left: : 2px solid var(--movies);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Movies .From_Your_Mov_Watchlist_Row h5 {
+  width: 215px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--movies);
+  border-left: : 2px solid var(--movies);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Movies .Coming_Soon_Row h5 {
+  width: 155px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--movies);
+  border-left: : 2px solid var(--movies);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+
+
+/*SWIPER*/
+.swiper {
+  max-width: 100%;
+  max-height: 550px;
+  display: flex;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+.swiper-slide img{
+  max-width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+
+  transition: transform 450ms;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.swiper-slide img:hover {
+  transform: scale(1.075);
+}
+
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+  height: 100%;
+  width: 2%;
+  width: calc(4%-5px);
+  top: 0;
+  bottom: 0;
+  margin: 0;
+
+  border-radius: 5px;
+  display: flex;
+}
+
+.swiper .swiper-button-prev {
+  left: 0;
+}
+
+.swiper .swiper-button-next {
+  right: 0;
+}
+
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  color: #fff;
+  font-weight: bold;
+  transition: transform 0.1s ease-out;
+
+  background: none;
+  display: flex;
+
+  transform: scale(0.6);
+}
+
+.Movies .swiper-slide img {
+  border: 4px solid var(--movies);
+}
+
+.TV_Series .swiper-slide img {
+  border: 4px solid var(--tvSeries);
+}
+
+.Music .swiper-slide img {
+  border: 4px solid var(--music);
+}
+
+.Books .swiper-slide img {
+  border: 4px solid var(--books);
+}
+
+.Artworks .swiper-slide img {
+  border: 4px solid var(--artworks);
+}
+
+.Movies .swiper .swiper-button-prev,
+.Movies .swiper .swiper-button-next {
+  background-color: rgba(102, 255, 246, 0.3);
+}
+
+.TV_Series .swiper .swiper-button-prev,
+.TV_Series .swiper .swiper-button-next {
+  background-color: rgba(167, 198, 255, 0.3);
+}
+
+.Music .swiper .swiper-button-prev,
+.Music .swiper .swiper-button-next {
+  background-color: rgba(109, 82, 212, 0.3);
+}
+
+.Books .swiper .swiper-button-prev,
+.Books .swiper .swiper-button-next {
+  background-color: rgba(160, 58, 219, 0.3);
+}
+
+.Artworks .swiper .swiper-button-prev,
+.Artworks .swiper .swiper-button-next {
+  background-color: rgba(255, 79, 162, 0.3);
+}
+
+/*TV SERIES*/
+.TV_Series h4 {
+  width: 113px;
+  height: 45px;
+
+  border: 3px solid var(--tvSeries);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+
+  margin-bottom: 25px;
+  margin-top: 100px;
+}
+
+.TV_Series h5 {
+  text-align: left;
+  color: var(--text-white);
+  padding-top: 8px;
+  padding-left: 15px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.TV_Series .Featured_TVSeries_Row h5 {
+  width: 205px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--tvSeries);
+  border-left: : 2px solid var(--tvSeries);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.TV_Series .From_Your_TV_Watchlist_Row h5 {
+  width: 215px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--tvSeries);
+  border-left: : 2px solid var(--tvSeries);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.TV_Series .Coming_Soon_Row h5 {
+  width: 155px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--tvSeries);
+  border-left: : 2px solid var(--tvSeries);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+
+
+/*MUSIC*/
+.Music h4 {
+  width: 113px;
+  height: 45px;
+
+  border: 3px solid var(--music);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+
+  margin-bottom: 25px;
+  margin-top: 100px;
+}
+
+.Music h5 {
+  text-align: left;
+  color: var(--text-white);
+  padding-top: 8px;
+  padding-left: 15px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.Music .From_Your_Liked_Songs_Row h5 {
+  width: 240px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--music);
+  border-left: : 2px solid var(--music);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Music .caption {
+  margin-top: 15px;
+  padding: 8px 5px;
+  color: #fff;
+  font-size: 14px;
+
+  box-sizing: border-box;
+  border: 2px solid var(--music);
+  border-radius: 15px;
+}
+
+
+/*BOOKS*/
+.Books h4 {
+  width: 113px;
+  height: 45px;
+
+  border: 3px solid var(--books);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+
+  margin-bottom: 25px;
+  margin-top: 100px;
+}
+
+.Books h5 {
+  text-align: left;
+  color: var(--text-white);
+  padding-top: 8px;
+  padding-left: 15px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.Books .Best_Sellers_Row h5 {
+  width: 145px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--books);
+  border-left: : 2px solid var(--books);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Books .From_Your_Reading_List_Row h5 {
+  width: 245px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--books);
+  border-left: : 2px solid var(--books);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Books .Featured_Books_Row h5 {
+  width: 180px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--books);
+  border-left: : 2px solid var(--books);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+
+
+/*ARTWORKS*/
+.Artworks h4 {
+  width: 113px;
+  height: 45px;
+
+  border: 3px solid var(--artworks);
+  box-sizing: border-box;
+  border-radius: 15px;
+  color: var(--text-white);
+
+  text-align: center;
+  padding-top: 6px;
+
+  margin-bottom: 25px;
+  margin-top: 100px;
+}
+
+.Artworks h5 {
+  text-align: left;
+  color: var(--text-white);
+  padding-top: 8px;
+  padding-left: 15px;
+
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.Artworks .Daily_Recommendations_Row h5 {
+  width: 255px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--artworks);
+  border-left: : 2px solid var(--artworks);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.Artworks .From_Your_Collection_Row h5 {
+  width: 225px;
+  height: 40px;
+
+  border-top: 2px solid var(--background-purple);
+  border-bottom: 2px solid var(--artworks);
+  border-left: : 2px solid var(--artworks);
+  border-right: : 2px solid var(--background-purple);
+  box-sizing: border-box;
+  border-radius: 15px;
+}
